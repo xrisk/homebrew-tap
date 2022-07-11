@@ -61,7 +61,7 @@ class Crystal < Formula
     platform = case OS.kernel_name
     when "Darwin" then "darwin-universal"
     # else "#{OS.kernel_name.downcase}-#{Hardware::CPU.arch}"
-    else "linux-arm64"
+    else "linux-x86_64"
     end
 
     checksums = {
