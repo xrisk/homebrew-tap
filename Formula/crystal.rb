@@ -60,7 +60,8 @@ class Crystal < Formula
   resource "boot" do
     platform = case OS.kernel_name
     when "Darwin" then "darwin-universal"
-    else "#{OS.kernel_name.downcase}-#{Hardware::CPU.arch}"
+    # else "#{OS.kernel_name.downcase}-#{Hardware::CPU.arch}"
+    else "linux-arm64"
     end
 
     checksums = {
