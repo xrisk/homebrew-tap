@@ -69,7 +69,6 @@ class Crystal < Formula
       "linux-x86_64"     => "a5bdf1b78897b3cdc7d715b5f7adff79e84401d39b7ab546ab3249dc17fc770c",
     }
 
-    if pla
     boot_version = Version.new("1.4.1-1")
 
     url "https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-#{platform}.tar.gz"
