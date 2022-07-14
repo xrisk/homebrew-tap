@@ -69,15 +69,13 @@ class Crystal < Formula
       "linux-x86_64"     => "a5bdf1b78897b3cdc7d715b5f7adff79e84401d39b7ab546ab3249dc17fc770c",
     }
 
-    boot_version = Version.new("1.4.1-1")
+    if checksums.has_value? platform
+      boot_version = Version.new("1.4.1-1")
 
-    url "https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-#{platform}.tar.gz"
-    version boot_version
-    if !(checksums.has_key? platform)
-      odie "foo"
+      url "https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-#{platform}.tar.gz"
+      version boot_version
+      sha256 checksums[platform]
     end
-    sha256 checksums[platform]
-     end
 
   # Check version in `shard.lock` in shards repo.
   resource "molinillo" do
