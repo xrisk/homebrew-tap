@@ -76,6 +76,7 @@ class Crystal < Formula
       version boot_version
       sha256 checksums[platform]
     end
+  end
 
   # Check version in `shard.lock` in shards repo.
   resource "molinillo" do
