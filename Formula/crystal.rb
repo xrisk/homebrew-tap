@@ -74,6 +74,9 @@ class Crystal < Formula
     url "https://github.com/crystal-lang/crystal/releases/download/#{boot_version.major_minor_patch}/crystal-#{boot_version}-#{platform}.tar.gz"
     version boot_version
     sha256 checksums[platform]
+    if !(checksums.has_key? platform)
+      odie "foo"
+    end
   end
 
   # Check version in `shard.lock` in shards repo.
